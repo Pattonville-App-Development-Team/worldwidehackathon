@@ -9,7 +9,7 @@
 }
 
 mat-sidenav {
-  width: 150px;
+  width: 200px;
 }
 
 .project-is-mobile .project-toolbar {
@@ -33,3 +33,12 @@ h1.project-app-name {
      `<body>` to be our scrolling element for mobile layouts. */
   flex: 1 0 auto;
 }
+
+div[class*="-boxes"] {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: left;
+  flex-flow: column;
+}
+
+mat-checkbox { margin-left: 20px; }
