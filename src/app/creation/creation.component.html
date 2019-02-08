@@ -1,3 +1,60 @@
-<p>
-  creation works!
-</p>
+<mat-toolbar color="primary" class="example-toolbar">
+  <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+  <h1 class="example-app-name">Pirate Pete's Closet</h1>
+</mat-toolbar>
+
+<div class="main">
+  <mat-horizontal-stepper [linear]="false" #stepper>
+
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>What is this item?</ng-template>
+        <mat-form-field>
+          <input matInput placeholder="Item Name" formControlName="firstCtrl" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Item Description</ng-template>
+        <mat-form-field>
+          <input matInput placeholder="Address" formControlName="secondCtrl" required>
+        </mat-form-field>
+        <webcam></webcam>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="thirdFormGroup">
+      <form [formGroup]="thirdFormGroup">
+        <ng-template matStepLabel>Item Logging</ng-template>
+        <mat-form-field>
+          <input matInput placeholder="Barcode" formControlName="thirdCtrl" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      You are now done.
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+
+  </mat-horizontal-stepper>
+
+</div>
+
