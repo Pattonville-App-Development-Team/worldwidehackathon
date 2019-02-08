@@ -20,6 +20,8 @@ import { CreationComponent } from './creation/creation.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {WebcamModule} from 'ngx-webcam';
 
+import {MatGridListModule} from '@angular/material/grid-list';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +44,8 @@ import {WebcamModule} from 'ngx-webcam';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
+    MatCheckboxModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
