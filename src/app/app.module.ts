@@ -2,7 +2,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import {MatButtonModule, MatIconModule, MatToolbarModule, MatSidenavModule, MatListModule, MatCheckboxModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatIconModule,
+  MatToolbarModule,
+  MatSidenavModule,
+  MatListModule,
+  MatCheckboxModule,
+  MatStepperModule, MatFormFieldModule, MatInput, MatInputModule
+} from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +18,8 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { CreationComponent } from './creation/creation.component';
 import { SidenavFilterPipePipe } from './sidenav-filter-pipe.pipe';
+import {ReactiveFormsModule} from '@angular/forms';
+import {WebcamModule} from 'ngx-webcam';
 
 @NgModule({
   declarations: [
@@ -20,6 +30,7 @@ import { SidenavFilterPipePipe } from './sidenav-filter-pipe.pipe';
     SidenavFilterPipePipe,
   ],
   imports: [
+    WebcamModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -28,7 +39,11 @@ import { SidenavFilterPipePipe } from './sidenav-filter-pipe.pipe';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

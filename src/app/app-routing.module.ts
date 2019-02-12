@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {MainContentComponent} from './main-content/main-content.component';
 import {CreationComponent} from './creation/creation.component';
+import {SidenavComponent} from './sidenav/sidenav.component';
 
 const routes: Routes = [
-  {path: 'main', component: MainContentComponent},
-  {path: 'creation', component: CreationComponent}
+  {path: 'main', component: SidenavComponent},
+  {path: 'creation', component: CreationComponent},
+  {path: '', redirectTo: '/main', pathMatch: 'full'}
 ];
 
 @NgModule({
