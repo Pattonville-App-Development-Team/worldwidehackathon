@@ -8,6 +8,8 @@ import {MediaMatcher} from '@angular/cdk/layout';
 })
 export class SidenavComponent implements OnDestroy {
 
+  filterArray = [];
+
   mobileQuery: MediaQueryList;
 
   fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);

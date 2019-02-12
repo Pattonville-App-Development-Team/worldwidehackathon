@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { CreationComponent } from './creation/creation.component';
+import { SidenavFilterPipePipe } from './sidenav-filter-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { CreationComponent } from './creation/creation.component';
     SidenavComponent,
     MainContentComponent,
     CreationComponent,
+    SidenavFilterPipePipe,
   ],
   imports: [
     BrowserModule,
