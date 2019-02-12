@@ -1,3 +1,7 @@
-<p>
-  main-content works!
-</p>
+<ul>
+  <ng-template ngFor let-item [ngForOf]="items | async">
+    <li>
+      <app-item [item]="item"></app-item>
+    </li>
+  </ng-template>
+</ul>

@@ -1,0 +1,29 @@
+<mat-card class="item">
+  <mat-card-header>
+    <mat-card-title>Shiba Inu</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <mat-card-content class="item-content">
+    <mat-card class="attribute-top">
+        <mat-chip-list>
+          Size: <mat-chip>{{item.size}}</mat-chip>
+        </mat-chip-list>
+    </mat-card>
+    <mat-card class="attribute">
+        <mat-chip-list>
+          Condition: <mat-chip>Used</mat-chip>
+        </mat-chip-list>
+    </mat-card>
+    <mat-card class="attribute">
+        <mat-chip-list>
+          Season: <mat-chip>Spring</mat-chip>
+          <mat-chip>Summer</mat-chip>
+          <mat-chip>Fall</mat-chip>
+          <mat-chip>Winter</mat-chip>
+        </mat-chip-list>
+    </mat-card>
+  </mat-card-content>
+  <mat-card-actions>
+    <button id="request" mat-stroked-button>Request</button>
+  </mat-card-actions>
+</mat-card>
