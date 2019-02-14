@@ -8,6 +8,8 @@ import { ITEMS } from '../mock-items';
 })
 export class ItemComponent implements OnInit {
 
+  items = ITEMS;
+
   @Input()
   item;
 
