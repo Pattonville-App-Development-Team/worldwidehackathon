@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ITEMS } from '../mock-items';
 export interface Tile {
   color: string;
   cols: number;
@@ -12,6 +13,9 @@ export interface Tile {
   styleUrls: ['./main-content.component.scss']
 })
 export class MainContentComponent implements OnInit {
+
+  items = ITEMS;
+
   tiles: Tile[] = [
     {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
     {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},

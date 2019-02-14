@@ -8,3 +8,10 @@
   </mat-grid-tile>
 </mat-grid-list>
 
+<ul>
+  <ng-template ngFor let-item [ngForOf]="items | async">
+    <li>
+      <app-item [item]="item"></app-item>
+    </li>
+  </ng-template>
+</ul>

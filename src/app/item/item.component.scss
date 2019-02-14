@@ -1,0 +1,30 @@
+#request {
+  width: 100%;
+}
+
+.item {
+  width: 20%;
+  display: inline-block;
+  margin: 5%;
+}
+
+.item-content .attribute {
+  border-style: solid;
+  border-color: #E5E5E5;
+  border-bottom-color: 0;
+  border-width: 0.5px;
+  width: 100%;
+  height: auto;
+  margin-left: -17px;
+
+}
+
+.item-content .attribute-top {
+  border-style: solid;
+  border-color: #E5E5E5;
+  border-width: 0.5px;
+  width: 100%;
+  height: auto;
+  margin-left: -17px;
+  margin-top: -19px;
+}
