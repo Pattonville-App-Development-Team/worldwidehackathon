@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { ITEMS } from '../mock-items';
 
 @Component({
@@ -7,8 +7,6 @@ import { ITEMS } from '../mock-items';
   styleUrls: ['./main-content.component.scss']
 })
 export class MainContentComponent implements OnInit {
-
-  items = ITEMS;
 
   constructor() { }
 
