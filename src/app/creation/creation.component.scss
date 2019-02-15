@@ -1,0 +1,37 @@
+.main {
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 2fr 80% 2fr;
+  grid-template-areas: "left main right";
+}
+
+.stepper {
+  margin-top: 30px;
+  grid-area: main;
+}
+mat-horizontal-stepper {
+  margin-top: 40px;
+}
+.stepper-content{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.title {
+  font-size: 2.5em;
+  color: #555555;
+  font-family: 'Didact Gothic', sans-serif;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.subtitle {
+  font-size: 1.2em;
+  color: #7b7b7b;
+  font-family: 'Didact Gothic', sans-serif;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  //margin-bottom: 10px;
+}

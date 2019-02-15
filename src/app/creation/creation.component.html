@@ -1,0 +1,90 @@
+<mat-toolbar color="primary" class="example-toolbar">
+  <h1 class="example-app-name">Pirate Pete's Closet</h1>
+</mat-toolbar>
+
+<div class="main">
+  <div class="stepper">
+    <p class="title">Register an Item</p>
+    <p class="subtitle">This information will help others find what they need.</p>
+
+    <mat-horizontal-stepper [linear]="false" #stepper>
+
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>About the item</ng-template>
+        <div class="stepper-content">
+          <mat-form-field appearance="outline">
+            <mat-label>Short Item Description</mat-label>
+            <input matInput>
+            <mat-hint>Blue sweater, Pink shoes, etc.</mat-hint>
+          </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Sizing</mat-label>
+              <mat-select>
+                <mat-option value="onesize">One Size Fits All</mat-option>
+                <mat-option value="prek">Pre-K</mat-option>
+                <mat-option value="elementary">Elementary Age</mat-option>
+                <mat-option value="middle">Middle School Age</mat-option>
+                <mat-option value="high">High School Age</mat-option>
+                <mat-option value="adult">Adult</mat-option>
+              </mat-select>
+            </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Item Type</mat-label>
+            <input matInput>
+            <mat-hint>Sweater, Pants, Gloves, etc.</mat-hint>
+          </mat-form-field>
+        </div>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Image of Item</ng-template>
+        <webcam></webcam>
+        <!--trigger]="triggerObservable" (imageCapture)="handleImage($event)"-->
+        <!--<div class="snapshot" *ngIf="webcamImage">-->
+          <!--<h2>Nice one!</h2>-->
+          <!--<img [src]="webcamImage.imageAsDataUrl"/>-->
+        <!--</div>-->
+        <!--<button mat-button (click)="triggerSnapshot()"> Take Picture</button>-->
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="thirdFormGroup">
+      <form [formGroup]="thirdFormGroup">
+        <ng-template matStepLabel>Barcode Logging</ng-template>
+        <div class="stepper-content">
+          <mat-form-field appearance="outline">
+            <mat-label>Barcode</mat-label>
+            <input matInput>
+            <mat-hint>Use a barcode scanner or type.</mat-hint>
+          </mat-form-field>
+        </div>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      Completed! Start again or go home.
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+
+  </mat-horizontal-stepper>
+  </div>
+</div>
+
