@@ -10,6 +10,7 @@ import {
   MatListModule,
   MatCheckboxModule,
   MatStepperModule, MatFormFieldModule, MatInput, MatInputModule, MatCardModule, MatChipsModule, MatGridListModule
+  MatStepperModule, MatFormFieldModule, MatInput, MatInputModule, MatSelectModule
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -52,6 +53,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatChipsModule,
     MatListModule,
     MatGridListModule
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

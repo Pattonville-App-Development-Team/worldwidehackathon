@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Subject} from 'rxjs';
+import {Observable} from 'rxjs/Observable';
+import {WebcamImage, WebcamInitError, WebcamUtil} from 'ngx-webcam';;
 
 @Component({
   selector: 'app-creation',
@@ -11,7 +14,11 @@ export class CreationComponent implements OnInit {
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
 
+  public webcamImage: WebcamImage = null;
+
   constructor(private _formBuilder: FormBuilder) {}
+
+  private trigger: Subject<void> = new Subject<void>();
 
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({
@@ -24,4 +31,17 @@ export class CreationComponent implements OnInit {
       thirdCtrl: ['', Validators.required]
     });
   }
+  public triggerSnapshot(): void {
+    this.trigger.next();
+  }
+
+  // public get triggerObservable(): Observable<void> {
+  //   return this.trigger.asObservable();
+  // }
+
+  public handleImage(webcamImage: WebcamImage): void {
+    console.log('received webcam image');
+    this.webcamImage = webcamImage;
+  }
+
 }

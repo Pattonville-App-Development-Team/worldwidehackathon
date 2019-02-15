@@ -24,7 +24,8 @@
     "@angular/router": "~7.0.0",
     "core-js": "^2.5.4",
     "ngx-webcam": "^0.2.2",
-    "rxjs": "~6.3.3",
+    "rxjs": "^6.4.0",
+    "rxjs-compat": "^6.4.0",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
