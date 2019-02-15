@@ -9,7 +9,7 @@ import {
   MatSidenavModule,
   MatListModule,
   MatCheckboxModule,
-  MatStepperModule, MatFormFieldModule, MatInput, MatInputModule, MatCardModule, MatChipsModule
+  MatStepperModule, MatFormFieldModule, MatInput, MatInputModule, MatCardModule, MatChipsModule, MatGridListModule
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -50,7 +50,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatGridListModule,
     MatCardModule,
     MatChipsModule,
-    MatListModule
+    MatListModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
