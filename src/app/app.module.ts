@@ -47,7 +47,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     ReactiveFormsModule,
     MatInputModule,
     MatCheckboxModule,
-    MatGridListModule
+    MatGridListModule,
     MatCardModule,
     MatChipsModule,
     MatListModule
