@@ -11,7 +11,6 @@ import {
   MatCheckboxModule,
   MatStepperModule,
   MatFormFieldModule,
-  MatInput,
   MatInputModule,
   MatCardModule,
   MatChipsModule,
