@@ -10,14 +10,16 @@ export class ItemComponent implements OnInit {
 
   items = ITEMS;
   breakpoint: number;
+  requests = 0;
 
   @Input()
   item;
 
-  ngOnInit(){
-    if(window.innerWidth == 320 || window.innerWidth == 375 || window.innerWidth == 414 || window.innerWidth == 438){
+  ngOnInit() {
+    if (window.innerWidth === 320 || window.innerWidth === 375 || window.innerWidth === 414 || window.innerWidth === 438) {
       this.breakpoint = 1;
-    } else if(window.innerWidth == 568 || window.innerWidth == 667 || window.innerWidth == 736 || window.innerWidth == 768 || window.innerWidth == 800 || window.innerWidth == 1024){
+    } else if (window.innerWidth === 568 || window.innerWidth === 667 || window.innerWidth === 736 || window.innerWidth === 768 ||
+      window.innerWidth === 800 || window.innerWidth === 1024) {
       this.breakpoint = 2;
     } else {
       this.breakpoint = 4;
@@ -25,13 +27,19 @@ export class ItemComponent implements OnInit {
   }
 
   onResize(event) {
-    if(window.innerWidth == 320 || window.innerWidth == 375 || window.innerWidth == 414 || window.innerWidth == 438){
+    if (window.innerWidth === 320 || window.innerWidth === 375 || window.innerWidth === 414 || window.innerWidth === 438) {
       this.breakpoint = 1;
-    } else if(window.innerWidth == 568 || window.innerWidth == 667 || window.innerWidth == 736 || window.innerWidth == 768 || window.innerWidth == 1024 || window.innerWidth == 800){
+    } else if (window.innerWidth === 568 || window.innerWidth === 667 || window.innerWidth === 736 || window.innerWidth === 768 ||
+      window.innerWidth === 1024 || window.innerWidth === 800) {
       this.breakpoint = 2;
     } else {
       this.breakpoint = 4;
     }
+ }
+ onRequest(item) {
+    this.requests += 1;
+    item.isDisabled = true;
+    console.log(this.requests);
  }
 
 }

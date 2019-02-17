@@ -15,7 +15,8 @@ import {
   MatCardModule,
   MatChipsModule,
   MatGridListModule,
-  MatSelectModule
+  MatSelectModule,
+  MatBadgeModule
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -57,7 +58,7 @@ import { ItemComponent } from './item/item.component';
     MatListModule,
     MatGridListModule,
     MatSelectModule,
-    MatGridListModule
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

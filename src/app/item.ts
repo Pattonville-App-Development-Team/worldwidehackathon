@@ -5,4 +5,5 @@ export class Item {
   image: string;
   category: string;
   condition: string;
+  isDisabled: boolean;
 }

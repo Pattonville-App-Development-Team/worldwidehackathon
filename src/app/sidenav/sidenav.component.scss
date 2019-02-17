@@ -22,6 +22,14 @@ h1.project-app-name {
   margin-left: 8px;
 }
 
+.shopping-cart {
+  padding: 0 0px;
+  margin-right: 20px;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+
 .filter-sidenav-container {
   /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
      causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */

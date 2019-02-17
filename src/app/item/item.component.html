@@ -24,7 +24,7 @@
               <br><mat-divider></mat-divider>
         </mat-card-content>
         <mat-card-actions>
-            <button id="request" mat-stroked-button>Request</button>
+            <button id="request" mat-stroked-button [disabled]="item.isDisabled" (click)="onRequest(item)">Request</button>
         </mat-card-actions>
     </mat-card>
   </mat-grid-tile>
