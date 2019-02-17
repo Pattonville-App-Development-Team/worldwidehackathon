@@ -35,25 +35,23 @@
             <mat-hint>Sweater, Pants, Gloves, etc.</mat-hint>
           </mat-form-field>
         </div>
-        <div>
-          <button mat-button matStepperNext>Next</button>
-        </div>
       </form>
     </mat-step>
 
     <mat-step [stepControl]="secondFormGroup">
       <form [formGroup]="secondFormGroup">
         <ng-template matStepLabel>Image of Item</ng-template>
-        <webcam></webcam>
-        <!--trigger]="triggerObservable" (imageCapture)="handleImage($event)"-->
-        <!--<div class="snapshot" *ngIf="webcamImage">-->
-          <!--<h2>Nice one!</h2>-->
-          <!--<img [src]="webcamImage.imageAsDataUrl"/>-->
-        <!--</div>-->
-        <!--<button mat-button (click)="triggerSnapshot()"> Take Picture</button>-->
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
+        <div class="webcam-container">
+          <webcam [width]="370" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"></webcam>
+          <span class="fill-span"></span>
+          <img [width]="370" [src]="webcamImage.imageAsDataUrl" *ngIf="webcamImage"/>
+        </div>
+        <br/>
+        <div class="trigger-button-container">
+          <button mat-button (click)="triggerSnapshot()">
+            <mat-icon>camera_alt</mat-icon>
+            Take Picture
+          </button>
         </div>
       </form>
     </mat-step>
@@ -68,23 +66,19 @@
             <mat-hint>Use a barcode scanner or type.</mat-hint>
           </mat-form-field>
         </div>
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
-        </div>
       </form>
     </mat-step>
 
     <mat-step>
       <ng-template matStepLabel>Done</ng-template>
       Completed! Start again or go home.
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
-      </div>
     </mat-step>
 
-  </mat-horizontal-stepper>
+    </mat-horizontal-stepper>
+  </div>
+  <div class="stepper-movement-container">
+    <button mat-button (click)="stepper.reset()">Reset</button>
+    <button mat-button (click)="stepper.previous()">Back</button>
+    <button mat-button (click)="stepper.next()">Next</button>
   </div>
 </div>
-

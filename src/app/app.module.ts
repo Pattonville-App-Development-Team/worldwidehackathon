@@ -9,8 +9,13 @@ import {
   MatSidenavModule,
   MatListModule,
   MatCheckboxModule,
-  MatStepperModule, MatFormFieldModule, MatInput, MatInputModule, MatCardModule, MatChipsModule, MatGridListModule
-  MatStepperModule, MatFormFieldModule, MatInput, MatInputModule, MatSelectModule
+  MatStepperModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatCardModule,
+  MatChipsModule,
+  MatGridListModule,
+  MatSelectModule
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,8 +26,6 @@ import { CreationComponent } from './creation/creation.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {WebcamModule} from 'ngx-webcam';
 import { ItemComponent } from './item/item.component';
-
-import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -52,8 +55,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatCardModule,
     MatChipsModule,
     MatListModule,
+    MatGridListModule,
+    MatSelectModule,
     MatGridListModule
-    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
