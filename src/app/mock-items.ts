@@ -1,10 +1,10 @@
 import { Item } from './item';
 
 export const ITEMS: Item[] = [
-  {barcode: 1,  size: 'XL',  age: 12, image: '', category: 'Shirt', condition: 'Used', isDisabled: false},
-  {barcode: 2,  size: 'S',  age: 16, image: '', category: 'Shirt', condition: 'New', isDisabled: false},
-  {barcode: 2,  size: 'XL',  age: 17, image: '', category: 'Pants', condition: 'Old', isDisabled: false},
-  {barcode: 2,  size: 'L',  age: 11, image: '', category: 'Shirt', condition: 'New', isDisabled: false},
-  {barcode: 2,  size: 'M',  age: 12, image: '', category: 'Pants', condition: 'Used', isDisabled: false},
-  {barcode: 2,  size: 'S',  age: 15, image: '', category: 'Jacket', condition: 'Used', isDisabled: false}
+  {barcode: 1,  size: 'XL',  age: 'Elementary School Age', image: '', category: 'Shirt', isDisabled: false},
+  {barcode: 2,  size: 'S',  age: 'Adult', image: '', category: 'Shirt', isDisabled: false},
+  {barcode: 2,  size: 'XL',  age: 'Middle School Age', image: '', category: 'Pants', isDisabled: false},
+  {barcode: 2,  size: 'L',  age: 'Pre-K Age', image: '', category: 'Shirt', isDisabled: false},
+  {barcode: 2,  size: 'M',  age: 'Elementary School Age', image: '', category: 'Pants', isDisabled: false},
+  {barcode: 2,  size: 'S',  age: 'Adult', image: '', category: 'Jacket', isDisabled: false}
 ];

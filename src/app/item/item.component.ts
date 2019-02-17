@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { ITEMS } from '../mock-items';
 
 @Component({
@@ -11,9 +11,12 @@ export class ItemComponent implements OnInit {
   items = ITEMS;
   breakpoint: number;
   requests = 0;
-
+  message = 'Hola Mundo!';
+  @Output() messageEvent = new EventEmitter<number>();
   @Input()
   item;
+
+  constructor() {}
 
   ngOnInit() {
     if (window.innerWidth === 320 || window.innerWidth === 375 || window.innerWidth === 414 || window.innerWidth === 438) {
@@ -38,6 +41,7 @@ export class ItemComponent implements OnInit {
  }
  onRequest(item) {
     this.requests += 1;
+    this.messageEvent.emit(this.requests);
     item.isDisabled = true;
     console.log(this.requests);
  }

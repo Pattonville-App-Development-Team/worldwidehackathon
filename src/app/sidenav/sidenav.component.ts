@@ -1,13 +1,17 @@
-import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
+import {AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {MediaMatcher} from '@angular/cdk/layout';
+import {ItemComponent} from '../item/item.component';
+import {Item} from '../item';
 
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss']
 })
-export class SidenavComponent implements OnDestroy {
+export class SidenavComponent implements OnDestroy  {
 
+  @ViewChild(ItemComponent) child;
+  badgeRequests: number;
   mobileQuery: MediaQueryList;
 
   fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
@@ -29,6 +33,10 @@ export class SidenavComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
+  }
+
+  receiveMessage($event) {
+    this.badgeRequests = $event;
   }
 
 }
