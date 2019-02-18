@@ -27,6 +27,7 @@ import { CreationComponent } from './creation/creation.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {WebcamModule} from 'ngx-webcam';
 import { ItemComponent } from './item/item.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -56,9 +57,9 @@ import { ItemComponent } from './item/item.component';
     MatCardModule,
     MatChipsModule,
     MatListModule,
-    MatGridListModule,
     MatSelectModule,
-    MatBadgeModule
+    MatBadgeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
