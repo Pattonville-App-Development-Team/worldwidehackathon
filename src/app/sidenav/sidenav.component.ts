@@ -1,6 +1,6 @@
 import {AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {MediaMatcher} from '@angular/cdk/layout';
-import {ItemComponent} from '../item/item.component';
+import {ItemComponent} from './item/item.component';
 import {Item} from '../item';
 
 @Component({

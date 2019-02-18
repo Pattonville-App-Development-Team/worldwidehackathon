@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import { ITEMS } from '../mock-items';
+import { ITEMS } from '../../mock-items';
 
 @Component({
   selector: 'app-item',

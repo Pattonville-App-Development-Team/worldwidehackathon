@@ -22,21 +22,21 @@ import {
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
-import { MainContentComponent } from './main-content/main-content.component';
 import { CreationComponent } from './creation/creation.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {WebcamModule} from 'ngx-webcam';
-import { ItemComponent } from './item/item.component';
+import { ItemComponent } from './sidenav/item/item.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { RequestpageComponent } from './requestpage/requestpage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidenavComponent,
-    MainContentComponent,
     CreationComponent,
     ItemComponent,
+    RequestpageComponent,
   ],
   imports: [
     WebcamModule,
