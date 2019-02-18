@@ -38,7 +38,9 @@
       </mat-list>
     </mat-sidenav>
     <mat-sidenav-content>
-      <app-item (messageEvent)="receiveMessage($event)"></app-item>
+      <div class="main-body">
+        <app-item (messageEvent)="receiveMessage($event)"></app-item>
+      </div>
       <!--<app-main-content></app-main-content>-->
     </mat-sidenav-content>
   </mat-sidenav-container>

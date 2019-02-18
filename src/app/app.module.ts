@@ -27,6 +27,7 @@ import { CreationComponent } from './creation/creation.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {WebcamModule} from 'ngx-webcam';
 import { ItemComponent } from './item/item.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { ItemComponent } from './item/item.component';
     MatListModule,
     MatGridListModule,
     MatSelectModule,
-    MatBadgeModule
+    MatBadgeModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
