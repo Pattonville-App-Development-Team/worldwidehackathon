@@ -1,8 +1,8 @@
 export class Item {
-  barcode: number;
+  barcode: string;
   size: string;
   age: string;
-  image: string;
+  imageURL: string;
   category: string;
   isDisabled: boolean;
 }
