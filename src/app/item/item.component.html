@@ -2,10 +2,10 @@
   <ng-container *ngFor="let item of items" class="tile">
       <mat-card class="item" fxFlex="0 1 calc(33.3% - 32px)">
         <mat-card-header>
-          <mat-card-title>{{item.category}}</mat-card-title>
+          <mat-card-title>{{item.title}}</mat-card-title>
         </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
         <mat-card-content class="item-content">
-          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
               <mat-chip-list class="attribute">
                 Size: <mat-chip>{{item.size}}</mat-chip>
               </mat-chip-list>
