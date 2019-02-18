@@ -30,7 +30,7 @@ export class ApiService {
     return this.http.get(this.baseUrl + 'category/' + category);
   }
 
-  getItemsByAge(age: number): Observable<any> {
+  getItemsByAge(age: string): Observable<any> {
     return this.http.get(this.baseUrl + 'age/' + age);
   }
 
@@ -46,7 +46,7 @@ export class ApiService {
     return this.http.put(this.baseUrl + item.barcode, item, this.httpOptions);
   }
 
-  deleteUser(barcode: string): Observable<any> {
+  deleteUser(barcode: string): Observable<any> { // DESTROY
     return this.http.delete(this.baseUrl + barcode, this.httpOptions);
   }
 }
