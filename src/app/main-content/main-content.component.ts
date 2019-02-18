@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ITEMS } from '../mock-items';
 import {ApiService} from '../api.service';
+import {Item} from '../item';
 
 @Component({
   selector: 'app-main-content',
@@ -14,19 +15,7 @@ export class MainContentComponent implements OnInit {
   constructor(private api: ApiService) { }
 
   ngOnInit() {
-    // this.api.getItems()
-    //   .subscribe(res => {
-    //     console.log(res['data']);
-    //   }, err => {
-    //     console.log(err);
-    //   });
-    // this.api.getItemByBarcode('00001')
-    //   .subscribe(res => {
-    //     console.log(res['data']);
-    //   }, err => {
-    //     console.log(err);
-    //   });
-    this.api.getItemsByAge(15)
+    this.api.getItems()
       .subscribe(res => {
         console.log(res['data']);
       }, err => {
