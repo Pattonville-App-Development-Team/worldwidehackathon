@@ -17,7 +17,7 @@ import { AppComponent } from './app.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { CreationComponent } from './creation/creation.component';
-import { SidenavFilterPipePipe } from './sidenav-filter-pipe.pipe';
+import { SidenavFilterPipe } from './pipes/sidenav-filter.pipe';
 import {ReactiveFormsModule} from '@angular/forms';
 import {WebcamModule} from 'ngx-webcam';
 
@@ -27,7 +27,7 @@ import {WebcamModule} from 'ngx-webcam';
     SidenavComponent,
     MainContentComponent,
     CreationComponent,
-    SidenavFilterPipePipe,
+    SidenavFilterPipe,
   ],
   imports: [
     WebcamModule,
