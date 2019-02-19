@@ -1,60 +1,99 @@
 <mat-toolbar color="primary" class="example-toolbar">
-  <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
   <h1 class="example-app-name">Pirate Pete's Closet</h1>
 </mat-toolbar>
 
 <div class="main">
-  <mat-horizontal-stepper [linear]="false" #stepper>
+  <div class="stepper">
+    <p class="title">Register an Item</p>
+    <p class="subtitle">This information will help others find what they need.</p>
+
+    <mat-horizontal-stepper [linear]="false" #stepper>
 
     <mat-step [stepControl]="firstFormGroup">
       <form [formGroup]="firstFormGroup">
-        <ng-template matStepLabel>What is this item?</ng-template>
-        <mat-form-field>
-          <input matInput placeholder="Item Name" formControlName="firstCtrl" required>
-        </mat-form-field>
-        <div>
-          <button mat-button matStepperNext>Next</button>
+        <ng-template matStepLabel>About the item</ng-template>
+        <div class="stepper-content">
+          <mat-form-field appearance="outline">
+            <mat-label>Short Item Title</mat-label>
+            <input name="title" #title matInput>
+            <mat-hint>Blue sweater, Pink shoes, etc.</mat-hint>
+          </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Sizing</mat-label>
+              <mat-select #size>
+                <mat-option value="onesize">One Size Fits All</mat-option>
+                <mat-option value="prek">Pre-K</mat-option>
+                <mat-option value="elementary">Elementary Age</mat-option>
+                <mat-option value="middle">Middle School Age</mat-option>
+                <mat-option value="high">High School Age</mat-option>
+                <mat-option value="adult">Adult</mat-option>
+              </mat-select>
+            </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Item Type</mat-label>
+            <input #category matInput>
+            <mat-hint>Sweater, Pants, Gloves, etc.</mat-hint>
+          </mat-form-field>
         </div>
       </form>
+      <div class="stepper-movement-container">
+        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button (click)="stepper.previous()">Back</button>
+        <button mat-button (click)="stepper.next()">Next</button>
+      </div>
     </mat-step>
 
     <mat-step [stepControl]="secondFormGroup">
       <form [formGroup]="secondFormGroup">
-        <ng-template matStepLabel>Item Description</ng-template>
-        <mat-form-field>
-          <input matInput placeholder="Address" formControlName="secondCtrl" required>
-        </mat-form-field>
-        <webcam></webcam>
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
+        <ng-template matStepLabel>Image of Item</ng-template>
+        <div class="webcam-container">
+          <webcam [width]="370" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"></webcam>
+          <span class="fill-span"></span>
+          <img [width]="740" [src]="webcamImage.imageAsDataUrl" *ngIf="webcamImage"/>
+        </div>
+        <br/>
+        <div class="trigger-button-container">
+          <button mat-button (click)="triggerSnapshot()">
+            <mat-icon>camera_alt</mat-icon>
+            Take Picture
+          </button>
         </div>
       </form>
+      <div class="stepper-movement-container">
+        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button (click)="stepper.previous()">Back</button>
+        <button mat-button (click)="stepper.next()">Next</button>
+      </div>
     </mat-step>
 
     <mat-step [stepControl]="thirdFormGroup">
       <form [formGroup]="thirdFormGroup">
-        <ng-template matStepLabel>Item Logging</ng-template>
-        <mat-form-field>
-          <input matInput placeholder="Barcode" formControlName="thirdCtrl" required>
-        </mat-form-field>
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
+        <ng-template matStepLabel>Barcode Logging</ng-template>
+        <div class="stepper-content">
+          <mat-form-field appearance="outline">
+            <mat-label>Barcode</mat-label>
+            <input #barcode matInput>
+            <mat-hint>Use a barcode scanner or type.</mat-hint>
+          </mat-form-field>
         </div>
       </form>
+      <div class="stepper-movement-container">
+        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button (click)="stepper.previous()">Back</button>
+        <button mat-button (click)="stepper.next()">Next</button>
+      </div>
     </mat-step>
 
     <mat-step>
       <ng-template matStepLabel>Done</ng-template>
-      You are now done.
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
+      Completed! Start again or go home.
+      <div class="stepper-movement-container">
         <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button (click)="stepper.previous()">Back</button>
+        <button mat-button (click)="sendData(title.value, size.value, category.value, barcode.value)">Done</button>
       </div>
     </mat-step>
 
-  </mat-horizontal-stepper>
-
+    </mat-horizontal-stepper>
+  </div>
 </div>
-

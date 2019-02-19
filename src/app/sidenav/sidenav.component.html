@@ -2,6 +2,8 @@
   <mat-toolbar color="primary" class="filter-toolbar">
     <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
     <h1 class="project-app-name">Pirate Pete's Closet</h1>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="shopping-cart"><mat-icon matBadge={{badgeRequests}} matBadgeColor="warn">shopping_cart</mat-icon></button>
   </mat-toolbar>
 
   <mat-sidenav-container class="filter-sidenav-container"
@@ -9,34 +11,42 @@
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
                  [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
       <mat-list>
-        <h3 mat-subheader>Sort by Season:</h3>
+        <h3 mat-subheader>Sort by Age:</h3>
         <div class="season-boxes">
-          <mat-checkbox>Spring</mat-checkbox>
-          <mat-checkbox>Summer</mat-checkbox>
-          <mat-checkbox>Autumn</mat-checkbox>
-          <mat-checkbox>Winter</mat-checkbox>
+          <mat-checkbox>No Age</mat-checkbox>
+          <mat-checkbox>Pre-K Age</mat-checkbox>
+          <mat-checkbox>Elementary School Age</mat-checkbox>
+          <mat-checkbox>Middle School Age</mat-checkbox>
+          <mat-checkbox>High School Age</mat-checkbox>
+          <mat-checkbox>Adult Age</mat-checkbox>
         </div>
       </mat-list>
       <mat-list>
-        <h3 mat-subheader>Sort by School:</h3>
+        <h3 mat-subheader>Sort by Catagory:</h3>
         <div class="school-boxes">
-          <mat-checkbox>Pre-School</mat-checkbox>
-          <mat-checkbox>Elementary</mat-checkbox>
-          <mat-checkbox>Middle School</mat-checkbox>
-          <mat-checkbox>High School</mat-checkbox>
+          <mat-checkbox>Tops</mat-checkbox>
+          <mat-checkbox>Bottoms</mat-checkbox>
+          <mat-checkbox>Jacket and Coats</mat-checkbox>
+          <mat-checkbox>Other</mat-checkbox>
         </div>
       </mat-list>
       <mat-list>
         <h3 mat-subheader>Sort by Size:</h3>
         <div class="size-boxes">
-          <mat-checkbox>Extra Small</mat-checkbox>
-          <mat-checkbox>Extra Large</mat-checkbox>
           <mat-checkbox>One size fits all</mat-checkbox>
+          <mat-checkbox>Extra Small</mat-checkbox>
+          <mat-checkbox>Small</mat-checkbox>
+          <mat-checkbox>Medium</mat-checkbox>
+          <mat-checkbox>Large</mat-checkbox>
+          <mat-checkbox>Extra Large</mat-checkbox>
         </div>
       </mat-list>
     </mat-sidenav>
     <mat-sidenav-content>
-      <app-main-content></app-main-content>
+      <div class="main-body">
+        <app-item (messageEvent)="receiveMessage($event)"></app-item>
+      </div>
+      <!--<app-main-content></app-main-content>-->
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

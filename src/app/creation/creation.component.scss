@@ -1,3 +1,60 @@
 .main {
+  height: 90vh;
+  width: 100vw;
   display: grid;
+  grid-template-columns: 2fr 80% 2fr;
+  grid-template-rows: 90% 10%;
+  grid-template-areas: ". main-stepper ."
+                       ". main-stepper-movement .";
+}
+
+.stepper {
+  margin-top: 30px;
+  grid-area: main-stepper;
+}
+mat-horizontal-stepper {
+  margin-top: 40px;
+}
+.stepper-content{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.title {
+  font-size: 2.5em;
+  color: #555555;
+  font-family: 'Didact Gothic', sans-serif;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.subtitle {
+  font-size: 1.2em;
+  color: #7b7b7b;
+  font-family: 'Didact Gothic', sans-serif;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  //margin-bottom: 10px;
+}
+
+.webcam-container {
+  display: flex;
+  width: 100%;
+}
+
+.trigger-button-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fill-span {
+  flex: 1 1 auto;
+}
+
+.stepper-movement-container {
+  grid-area: main-stepper-movement;
 }
