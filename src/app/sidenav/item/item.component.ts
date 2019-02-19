@@ -1,5 +1,6 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import { ITEMS } from '../../mock-items';
+import { ApiService } from '../../api.service';
+import { Item } from '../../item';
 
 @Component({
   selector: 'app-item',
@@ -8,37 +9,26 @@ import { ITEMS } from '../../mock-items';
 })
 export class ItemComponent implements OnInit {
 
-  items = ITEMS;
-  breakpoint: number;
+  items;
   requests = 0;
   message = 'Hola Mundo!';
   @Output() messageEvent = new EventEmitter<number>();
   @Input()
   item;
 
-  constructor() {}
+  constructor(private api: ApiService) {}
 
   ngOnInit() {
-    if (window.innerWidth === 320 || window.innerWidth === 375 || window.innerWidth === 414 || window.innerWidth === 438) {
-      this.breakpoint = 1;
-    } else if (window.innerWidth === 568 || window.innerWidth === 667 || window.innerWidth === 736 || window.innerWidth === 768 ||
-      window.innerWidth === 800 || window.innerWidth === 1024) {
-      this.breakpoint = 2;
-    } else {
-      this.breakpoint = 4;
-    }
+    this.items = this.api.getItems()
+      .subscribe((res) => {
+        console.log(res['data']);
+        console.log(res);
+        this.items = res['data'];
+      }, (err) => {
+        console.log(err);
+      });
   }
 
-  onResize(event) {
-    if (window.innerWidth === 320 || window.innerWidth === 375 || window.innerWidth === 414 || window.innerWidth === 438) {
-      this.breakpoint = 1;
-    } else if (window.innerWidth === 568 || window.innerWidth === 667 || window.innerWidth === 736 || window.innerWidth === 768 ||
-      window.innerWidth === 1024 || window.innerWidth === 800) {
-      this.breakpoint = 2;
-    } else {
-      this.breakpoint = 4;
-    }
- }
  onRequest(item) {
     this.requests += 1;
     this.messageEvent.emit(this.requests);

@@ -14,13 +14,13 @@
         <ng-template matStepLabel>About the item</ng-template>
         <div class="stepper-content">
           <mat-form-field appearance="outline">
-            <mat-label>Short Item Description</mat-label>
-            <input matInput>
+            <mat-label>Short Item Title</mat-label>
+            <input name="title" #title matInput>
             <mat-hint>Blue sweater, Pink shoes, etc.</mat-hint>
           </mat-form-field>
             <mat-form-field appearance="outline">
               <mat-label>Sizing</mat-label>
-              <mat-select>
+              <mat-select #size>
                 <mat-option value="onesize">One Size Fits All</mat-option>
                 <mat-option value="prek">Pre-K</mat-option>
                 <mat-option value="elementary">Elementary Age</mat-option>
@@ -31,11 +31,16 @@
             </mat-form-field>
           <mat-form-field appearance="outline">
             <mat-label>Item Type</mat-label>
-            <input matInput>
+            <input #category matInput>
             <mat-hint>Sweater, Pants, Gloves, etc.</mat-hint>
           </mat-form-field>
         </div>
       </form>
+      <div class="stepper-movement-container">
+        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button (click)="stepper.previous()">Back</button>
+        <button mat-button (click)="stepper.next()">Next</button>
+      </div>
     </mat-step>
 
     <mat-step [stepControl]="secondFormGroup">
@@ -44,7 +49,7 @@
         <div class="webcam-container">
           <webcam [width]="370" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"></webcam>
           <span class="fill-span"></span>
-          <img [width]="370" [src]="webcamImage.imageAsDataUrl" *ngIf="webcamImage"/>
+          <img [width]="740" [src]="webcamImage.imageAsDataUrl" *ngIf="webcamImage"/>
         </div>
         <br/>
         <div class="trigger-button-container">
@@ -54,6 +59,11 @@
           </button>
         </div>
       </form>
+      <div class="stepper-movement-container">
+        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button (click)="stepper.previous()">Back</button>
+        <button mat-button (click)="stepper.next()">Next</button>
+      </div>
     </mat-step>
 
     <mat-step [stepControl]="thirdFormGroup">
@@ -62,23 +72,28 @@
         <div class="stepper-content">
           <mat-form-field appearance="outline">
             <mat-label>Barcode</mat-label>
-            <input matInput>
+            <input #barcode matInput>
             <mat-hint>Use a barcode scanner or type.</mat-hint>
           </mat-form-field>
         </div>
       </form>
+      <div class="stepper-movement-container">
+        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button (click)="stepper.previous()">Back</button>
+        <button mat-button (click)="stepper.next()">Next</button>
+      </div>
     </mat-step>
 
     <mat-step>
       <ng-template matStepLabel>Done</ng-template>
       Completed! Start again or go home.
+      <div class="stepper-movement-container">
+        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button (click)="stepper.previous()">Back</button>
+        <button mat-button (click)="sendData(title.value, size.value, category.value, barcode.value)">Done</button>
+      </div>
     </mat-step>
 
     </mat-horizontal-stepper>
-  </div>
-  <div class="stepper-movement-container">
-    <button mat-button (click)="stepper.reset()">Reset</button>
-    <button mat-button (click)="stepper.previous()">Back</button>
-    <button mat-button (click)="stepper.next()">Next</button>
   </div>
 </div>
