@@ -16,7 +16,7 @@ import {
   MatChipsModule,
   MatGridListModule,
   MatSelectModule,
-  MatBadgeModule
+  MatBadgeModule,
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
