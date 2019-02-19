@@ -22,6 +22,8 @@ export class CreationComponent implements OnInit {
 
   constructor(private _formBuilder: FormBuilder, private api: ApiService) {}
 
+  items;
+  
   private trigger: Subject<void> = new Subject<void>();
 
   ngOnInit() {
