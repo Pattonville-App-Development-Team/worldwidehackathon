@@ -13,7 +13,7 @@ import { Item } from '../item';
 })
 
 export class CreationComponent implements OnInit {
-
+  items;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
