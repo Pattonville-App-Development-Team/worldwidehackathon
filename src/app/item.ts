@@ -3,7 +3,7 @@ export class Item {
   title: string;
   size: string;
   age: string;
-  imageURL: string;
+  imageData: string;
   category: string;
   isDisabled: boolean;
 }

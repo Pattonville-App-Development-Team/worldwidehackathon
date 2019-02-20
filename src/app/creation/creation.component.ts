@@ -51,15 +51,16 @@ export class CreationComponent implements OnInit {
     return this.trigger.asObservable();
   }
 
+
+
   sendData(title: string, size: string, category: string, barcode: string): void {
     var newItem = new Item();
 
     newItem.title = title;
     newItem.size = size;
     newItem.category = category;
-    newItem.age = "1";
-    // newItem.imageURL = this.webcamImage._imageAsDataUrl;
-    newItem.imageURL = "myMum";
+    newItem.age = "42";
+    newItem.imageData = this.webcamImage.imageAsDataUrl;
     newItem.barcode = barcode;
 
     console.log('Received stepper completion, sending data to server', newItem);
@@ -69,7 +70,7 @@ export class CreationComponent implements OnInit {
         this.items = res['data'];
       }, (err) => {
         console.log(err);
-      });;
+      });
     return;
   }
 }

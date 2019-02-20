@@ -42,6 +42,8 @@ export class ApiService {
     return this.http.post(this.baseUrl, item, this.httpOptions);
   }
 
+  //Are we going to add an updateItem option?
+
   updateUser(item: Item): Observable<any> {
     return this.http.put(this.baseUrl + item.barcode, item, this.httpOptions);
   }
