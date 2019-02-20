@@ -11,10 +11,7 @@ import {
   MatCheckboxModule,
   MatStepperModule,
   MatFormFieldModule,
-  MatInputModule,
-  MatCardModule,
-  MatChipsModule,
-  MatGridListModule,
+  MatInputModule, MatCardModule, MatChipsModule, MatGridListModule,
   MatSelectModule,
   MatBadgeModule,
 } from '@angular/material';
@@ -36,12 +33,9 @@ import { RequestpageComponent } from './requestpage/requestpage.component';
     AppComponent,
     SidenavComponent,
     CreationComponent,
-<<<<<<< HEAD
     SidenavFilterPipe,
-=======
     ItemComponent,
     RequestpageComponent,
->>>>>>> origin/dev
   ],
   imports: [
     WebcamModule,
@@ -68,6 +62,7 @@ import { RequestpageComponent } from './requestpage/requestpage.component';
     HttpClientModule,
     MatBadgeModule,
     FlexLayoutModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

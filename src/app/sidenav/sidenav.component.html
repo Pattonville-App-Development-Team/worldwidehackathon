@@ -1,5 +1,5 @@
-<div class="filter-container" [class.project-is-mobile]="mobileQuery.matches">
-  <mat-toolbar color="primary" class="filter-toolbar">
+<div class="project-container" [class.project-is-mobile]="mobileQuery.matches">
+  <mat-toolbar color="primary" class="project-toolbar">
     <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
     <h1 class="project-app-name">Pirate Pete's Closet</h1>
     <span class="example-spacer"></span>
@@ -46,7 +46,6 @@
       <div class="main-body">
         <app-item (messageEvent)="receiveMessage($event)"></app-item>
       </div>
-      <!--<app-main-content></app-main-content>-->
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

@@ -1,6 +1,7 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { ApiService } from '../../api.service';
 import { Item } from '../../item';
+import {ITEMS} from '../../mock-items';
 
 @Component({
   selector: 'app-item',
@@ -11,7 +12,6 @@ export class ItemComponent implements OnInit {
 
   items;
   requests = 0;
-  message = 'Hola Mundo!';
   @Output() messageEvent = new EventEmitter<number>();
   @Input()
   item;

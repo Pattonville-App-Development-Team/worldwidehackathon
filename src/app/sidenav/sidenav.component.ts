@@ -10,13 +10,10 @@ import {Item} from '../item';
 })
 export class SidenavComponent implements OnDestroy  {
 
-<<<<<<< HEAD
   filterArray = [];
 
-=======
   @ViewChild(ItemComponent) child;
   badgeRequests: number;
->>>>>>> origin/dev
   mobileQuery: MediaQueryList;
 
   private _mobileQueryListener: () => void;
