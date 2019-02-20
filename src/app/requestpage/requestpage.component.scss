@@ -1,0 +1,15 @@
+.body {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr ;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:"header header header"
+                      "left main right"
+                      "bottom bottom bottom";
+}
+.list-view {
+  grid-column-start: main;
+  grid-row-start: main;
+}
+button{
+  align: center;
+}

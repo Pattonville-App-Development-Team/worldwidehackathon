@@ -9,7 +9,7 @@
 }
 
 mat-sidenav {
-  width: 200px;
+  width: 250px;
 }
 
 .project-is-mobile .project-toolbar {
@@ -20,6 +20,14 @@ mat-sidenav {
 
 h1.project-app-name {
   margin-left: 8px;
+}
+
+.shopping-cart {
+  padding: 0 0px;
+  margin-right: 20px;
+}
+.example-spacer {
+  flex: 1 1 auto;
 }
 
 .filter-sidenav-container {
@@ -39,6 +47,10 @@ div[class*="-boxes"] {
   flex-wrap: nowrap;
   justify-content: left;
   flex-flow: column;
+}
+
+.main-body {
+  margin: 3%;
 }
 
 mat-checkbox { margin-left: 20px; }

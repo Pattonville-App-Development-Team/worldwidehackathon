@@ -1,13 +1,16 @@
 .main {
-  height: fit-content;
+  height: 90vh;
+  width: 100vw;
   display: grid;
   grid-template-columns: 2fr 80% 2fr;
-  grid-template-areas: "left main right";
+  grid-template-rows: 90% 10%;
+  grid-template-areas: ". main-stepper ."
+                       ". main-stepper-movement .";
 }
 
 .stepper {
   margin-top: 30px;
-  grid-area: main;
+  grid-area: main-stepper;
 }
 mat-horizontal-stepper {
   margin-top: 40px;
@@ -34,4 +37,24 @@ mat-horizontal-stepper {
   padding: 0;
   margin: 0;
   //margin-bottom: 10px;
+}
+
+.webcam-container {
+  display: flex;
+  width: 100%;
+}
+
+.trigger-button-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fill-span {
+  flex: 1 1 auto;
+}
+
+.stepper-movement-container {
+  grid-area: main-stepper-movement;
 }

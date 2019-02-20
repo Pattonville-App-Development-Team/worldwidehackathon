@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ITEMS } from '../mock-items';
+import { MediaMatcher } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-main-content',
@@ -8,7 +8,7 @@ import { ITEMS } from '../mock-items';
 })
 export class MainContentComponent implements OnInit {
 
-  items = ITEMS;
+  mobileQuery: MediaQueryList;
 
   constructor() { }
 

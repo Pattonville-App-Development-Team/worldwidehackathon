@@ -3,15 +3,12 @@
 }
 
 .item {
-  display: inline-block;
-  margin: 5%;
-  min-width: 200px;
-  max-width: 400px;
+  margin-bottom: 3%;
 }
 
-.item-content {
-  margin-bottom: 0;
-}
+//.item-content {
+//  margin-bottom: 2%;
+//}
 
 // .item-content .attribute {
 //   border-style: solid;
@@ -35,6 +32,6 @@
 // }
 //
 //
-.item mat-card-title {
-  margin-bottom: 25px;
-}
+//.item mat-card-title {
+//  margin-bottom: 25px;
+//}

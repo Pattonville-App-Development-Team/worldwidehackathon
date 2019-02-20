@@ -1,22 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Subject} from 'rxjs';
 import {Observable} from 'rxjs/Observable';
-import {WebcamImage, WebcamInitError, WebcamUtil} from 'ngx-webcam';;
+import {WebcamImage} from 'ngx-webcam';
+import { ApiService } from '../api.service';
+import { Item } from '../item';
 
 @Component({
   selector: 'app-creation',
   templateUrl: './creation.component.html',
   styleUrls: ['./creation.component.scss']
 })
+
 export class CreationComponent implements OnInit {
+
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
 
   public webcamImage: WebcamImage = null;
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(private _formBuilder: FormBuilder, private api: ApiService) {}
 
   private trigger: Subject<void> = new Subject<void>();
 
@@ -31,17 +35,39 @@ export class CreationComponent implements OnInit {
       thirdCtrl: ['', Validators.required]
     });
   }
+
   public triggerSnapshot(): void {
     this.trigger.next();
   }
 
-  // public get triggerObservable(): Observable<void> {
-  //   return this.trigger.asObservable();
-  // }
-
   public handleImage(webcamImage: WebcamImage): void {
-    console.log('received webcam image');
+    console.log('received webcam image', webcamImage);
     this.webcamImage = webcamImage;
   }
 
+  public get triggerObservable(): Observable<void> {
+    return this.trigger.asObservable();
+  }
+
+  sendData(title: string, size: string, category: string, barcode: string): void {
+    var newItem = new Item();
+
+    newItem.title = title;
+    newItem.size = size;
+    newItem.category = category;
+    newItem.age = "1";
+    // newItem.imageURL = this.webcamImage._imageAsDataUrl;
+    newItem.imageURL = "myMum";
+    newItem.barcode = barcode;
+
+    console.log('Received stepper completion, sending data to server', newItem);
+    this.api.createItem(newItem)
+        .subscribe((res) => {
+        console.log(res['data']);
+        this.items = res['data'];
+      }, (err) => {
+        console.log(err);
+      });;
+    return;
+  }
 }
