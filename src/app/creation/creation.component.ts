@@ -5,7 +5,6 @@ import {Observable} from 'rxjs/Observable';
 import {WebcamImage} from 'ngx-webcam';
 import {ApiService} from '../api.service';
 import {Item} from '../item';
-// import * as sha2 from 'sha256';
 
 @Component({
   selector: 'app-creation',
@@ -52,20 +51,13 @@ export class CreationComponent implements OnInit {
 
   sendData(title: string, size: string, category: string, barcode: string): void {
     var newItem = new Item();
-    // var filename = sha2(this.webcamImage.imageAsBase64) + ".jpg";
 
     newItem.title = title;
     newItem.size = size;
     newItem.category = category;
     newItem.age = "42";
     newItem.imageData = this.webcamImage.imageAsDataUrl;
-    // writeFile('/env/images/' + filename, 
-    //   this.webcamImage.imageAsBase64, 
-    //   function(err) {
-    //     console.log(err);
-    //     document.getElementById('err').innerText = "" + err;
-    //   }
-    // );
+   
 
     newItem.barcode = barcode;
 
