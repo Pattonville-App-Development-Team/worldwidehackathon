@@ -92,6 +92,9 @@
         <button mat-button (click)="stepper.previous()">Back</button>
         <button mat-button (click)="sendData(title.value, size.value, category.value, barcode.value)">Done</button>
       </div>
+      <div>
+        <mat-label id='err'></mat-label>
+      </div>
     </mat-step>
 
     </mat-horizontal-stepper>
