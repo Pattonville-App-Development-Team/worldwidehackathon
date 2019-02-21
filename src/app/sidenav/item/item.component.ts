@@ -10,7 +10,7 @@ import {ITEMS} from '../../mock-items';
 })
 export class ItemComponent implements OnInit {
 
-  items;
+  items: Item[];
   requests = 0;
   @Output() messageEvent = new EventEmitter<number>();
   @Input()
@@ -19,7 +19,7 @@ export class ItemComponent implements OnInit {
   constructor(private api: ApiService) {}
 
   ngOnInit() {
-    this.items = this.api.getItems()
+    this.api.getItems()
       .subscribe((res) => {
         console.log(res['data']);
         console.log(res);
