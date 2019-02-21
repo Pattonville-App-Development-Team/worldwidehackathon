@@ -3,8 +3,8 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Subject} from 'rxjs';
 import {Observable} from 'rxjs/Observable';
 import {WebcamImage} from 'ngx-webcam';
-import { ApiService } from '../api.service';
-import { Item } from '../item';
+import {ApiService} from '../api.service';
+import {Item} from '../item';
 
 @Component({
   selector: 'app-creation',
@@ -21,7 +21,7 @@ export class CreationComponent implements OnInit {
   public webcamImage: WebcamImage = null;
 
   constructor(private _formBuilder: FormBuilder, private api: ApiService) {}
-
+  
   private trigger: Subject<void> = new Subject<void>();
 
   ngOnInit() {
@@ -55,9 +55,10 @@ export class CreationComponent implements OnInit {
     newItem.title = title;
     newItem.size = size;
     newItem.category = category;
-    newItem.age = "1";
-    // newItem.imageURL = this.webcamImage._imageAsDataUrl;
-    newItem.imageURL = "myMum";
+    newItem.age = "42";
+    newItem.imageData = this.webcamImage.imageAsDataUrl;
+   
+
     newItem.barcode = barcode;
 
     console.log('Received stepper completion, sending data to server', newItem);
@@ -67,7 +68,7 @@ export class CreationComponent implements OnInit {
         this.items = res['data'];
       }, (err) => {
         console.log(err);
-      });;
+      });
     return;
   }
 }
