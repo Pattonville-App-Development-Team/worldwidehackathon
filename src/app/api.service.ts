@@ -22,6 +22,10 @@ export class ApiService {
     return this.http.get<Item[]>(this.baseUrl);
   }
 
+  getAvailableItems(): Observable<any> {
+    return this.http.get(this.baseUrl + 'available/true');
+  }
+
   getItemByBarcode(barcode: string): Observable<any> {
     return this.http.get<Item>(this.baseUrl + barcode);
   }
@@ -42,7 +46,9 @@ export class ApiService {
     return this.http.post(this.baseUrl, item, this.httpOptions);
   }
 
-  //Are we going to add an updateItem option?
+  requestItem(item: Item): Observable<any> {
+    return this.http.put(this.baseUrl + 'request/' + item.barcode, this.httpOptions);
+  }
 
   updateUser(item: Item): Observable<any> {
     return this.http.put(this.baseUrl + item.barcode, item, this.httpOptions);

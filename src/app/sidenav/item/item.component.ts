@@ -19,7 +19,7 @@ export class ItemComponent implements OnInit {
   constructor(private api: ApiService) {}
 
   ngOnInit() {
-    this.api.getItems()
+    this.api.getAvailableItems()
       .subscribe((res) => {
         console.log(res['data']);
         console.log(res);
@@ -29,10 +29,19 @@ export class ItemComponent implements OnInit {
       });
   }
 
- onRequest(item) {
+ onRequest(item: Item) {
     this.requests += 1;
     this.messageEvent.emit(this.requests);
-    item.isDisabled = true;
+    item.isDisabled = 'true';
+    this.api.requestItem(item)
+      .subscribe((res) => {
+        console.log('success');
+        console.log(res['data']);
+        this.items = res['data'];
+      }, (err) => {
+        console.log('failure');
+        console.log(err);
+      });
     console.log(this.requests);
  }
 
