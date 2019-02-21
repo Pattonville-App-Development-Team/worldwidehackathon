@@ -29,6 +29,14 @@ mat-horizontal-stepper {
   padding: 0;
   margin: 0;
 }
+.end-title {
+  font-size: 1.4em;
+  color: #555555;
+  font-family: 'Didact Gothic', sans-serif;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
 .subtitle {
   font-size: 1.2em;
   color: #7b7b7b;
@@ -37,6 +45,14 @@ mat-horizontal-stepper {
   padding: 0;
   margin: 0;
   //margin-bottom: 10px;
+}
+.end-subtitle {
+  font-size: 1em;
+  color: #7b7b7b;
+  font-family: 'Didact Gothic', sans-serif;
+  text-align: center;
+  padding: 0;
+  margin: 0;
 }
 
 .webcam-container {
@@ -57,4 +73,18 @@ mat-horizontal-stepper {
 
 .stepper-movement-container {
   grid-area: main-stepper-movement;
+}
+
+.horizontal-alignment-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vertical-alignment-container {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
