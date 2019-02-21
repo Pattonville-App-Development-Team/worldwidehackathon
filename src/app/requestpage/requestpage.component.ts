@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ApiService} from '../api.service';
+import {Item} from '../item';
 
 @Component({
   selector: 'app-requestpage',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RequestpageComponent implements OnInit {
 
-  constructor() { }
+  items: Item[];
+
+  constructor(private api: ApiService) { }
 
   ngOnInit() {
+    this.api.getRequestedItems()
+      .subscribe((res) => {
+        console.log(res['data']);
+        console.log(res);
+        this.items = res['data'];
+      }, (err) => {
+        console.log(err);
+      });
   }
 
 }

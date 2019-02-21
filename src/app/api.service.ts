@@ -23,6 +23,10 @@ export class ApiService {
   }
 
   getAvailableItems(): Observable<any> {
+    return this.http.get(this.baseUrl + 'available/false');
+  }
+
+  getRequestedItems(): Observable<any> {
     return this.http.get(this.baseUrl + 'available/true');
   }
 
