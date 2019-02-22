@@ -15,12 +15,12 @@
       <mat-list>
         <h3 mat-subheader>Sort by Age:</h3>
         <div class="season-boxes">
-          <mat-checkbox>No Age</mat-checkbox>
-          <mat-checkbox>Pre-K Age</mat-checkbox>
-          <mat-checkbox>Elementary School Age</mat-checkbox>
-          <mat-checkbox>Middle School Age</mat-checkbox>
-          <mat-checkbox>High School Age</mat-checkbox>
-          <mat-checkbox>Adult Age</mat-checkbox>
+          <mat-checkbox (click)=>"handleCheck($event)">No Age</mat-checkbox>
+          <mat-checkbox (click)=>"handleCheck($event)">Pre-K Age</mat-checkbox>
+          <mat-checkbox (click)=>"handleCheck($event)">Elementary School Age</mat-checkbox>
+          <mat-checkbox (click)=>"handleCheck($event)">Middle School Age</mat-checkbox>
+          <mat-checkbox (click)=>"handleCheck($event)">High School Age</mat-checkbox>
+          <mat-checkbox (click)=>"handleCheck($event)">Adult Age</mat-checkbox>
         </div>
       </mat-list>
       <mat-list>
