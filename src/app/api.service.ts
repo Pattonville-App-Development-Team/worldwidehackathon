@@ -10,7 +10,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  baseUrl = 'http://52.14.200.201:3000/api/items/';
+  baseUrl = 'https://52.14.200.201/api/items/';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -20,6 +20,14 @@ export class ApiService {
 
   getItems(): Observable<any> {
     return this.http.get<Item[]>(this.baseUrl);
+  }
+
+  getAvailableItems(): Observable<any> {
+    return this.http.get(this.baseUrl + 'available/false');
+  }
+
+  getRequestedItems(): Observable<any> {
+    return this.http.get(this.baseUrl + 'available/true');
   }
 
   getItemByBarcode(barcode: string): Observable<any> {
@@ -42,7 +50,13 @@ export class ApiService {
     return this.http.post(this.baseUrl, item, this.httpOptions);
   }
 
-  //Are we going to add an updateItem option?
+  requestItem(item: Item): Observable<any> {
+    return this.http.put(this.baseUrl + 'request/' + item.barcode, this.httpOptions);
+  }
+
+  unrequestItem(item: Item): Observable<any> {
+    return this.http.put(this.baseUrl + 'unrequest/' + item.barcode, this.httpOptions);
+  }
 
   updateUser(item: Item): Observable<any> {
     return this.http.put(this.baseUrl + item.barcode, item, this.httpOptions);

@@ -1,9 +1,9 @@
 export class Item {
-  barcode: string;
   title: string;
-  size: string;
   age: string;
-  imageData: string;
+  size: string;
   category: string;
-  isDisabled: boolean;
+  barcode: string;
+  imageData: string;
+  isDisabled: string;
 }

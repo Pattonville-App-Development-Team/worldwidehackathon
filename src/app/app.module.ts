@@ -13,7 +13,7 @@ import {
   MatFormFieldModule,
   MatInputModule, MatCardModule, MatChipsModule, MatGridListModule,
   MatSelectModule,
-  MatBadgeModule,
+  MatBadgeModule, MatDialogModule,
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -63,6 +63,7 @@ import { RequestpageComponent } from './requestpage/requestpage.component';
     MatBadgeModule,
     FlexLayoutModule,
     MatSelectModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
