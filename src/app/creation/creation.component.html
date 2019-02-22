@@ -8,7 +8,6 @@
     <p class="subtitle">This information will help others find what they need.</p>
 
     <mat-horizontal-stepper [linear]="false" #stepper>
-
       <mat-step [stepControl]="firstFormGroup">
         <form [formGroup]="firstFormGroup">
           <ng-template matStepLabel>About the item</ng-template>
@@ -54,10 +53,12 @@
       <mat-step [stepControl]="secondFormGroup">
         <form [formGroup]="secondFormGroup">
           <ng-template matStepLabel>Image of Item</ng-template>
-          <div class="webcam-container">
-            <webcam [width]="500" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"></webcam>
+          <div class="webcam-and-image-container">
+            <div class="webcam-and-image" #webcamContainer>
+              <webcam [width]="webcamContainer.clientWidth" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"></webcam>
+            </div>
             <span class="fill-span"></span>
-            <img [width]="500" [src]="webcamImage.imageAsDataUrl" *ngIf="webcamImage"/>
+            <img class="webcam-and-image" [src]="webcamImage.imageAsDataUrl" *ngIf="webcamImage"/>
           </div>
           <br/>
           <div class="horizontal-alignment-container">
@@ -103,7 +104,6 @@
           <mat-label id='err'></mat-label>
         </div>
       </mat-step>
-
     </mat-horizontal-stepper>
   </div>
 </div>

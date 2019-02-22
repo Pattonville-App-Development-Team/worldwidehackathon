@@ -55,7 +55,7 @@ mat-horizontal-stepper {
   margin: 0;
 }
 
-.webcam-container {
+.webcam-and-image-container {
   display: flex;
   width: 100%;
 }
@@ -87,4 +87,8 @@ mat-horizontal-stepper {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.webcam-and-image {
+  width: 45%;
 }
