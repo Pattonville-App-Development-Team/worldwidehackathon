@@ -10,7 +10,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  baseUrl = 'https://52.14.200.201/api/items/';
+  baseUrl = 'https://ec2-52-14-200-201.us-east-2.compute.amazonaws.com/api/items/';
 
   httpOptions = {
     headers: new HttpHeaders({
