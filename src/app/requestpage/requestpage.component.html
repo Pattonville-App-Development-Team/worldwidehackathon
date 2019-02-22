@@ -25,6 +25,9 @@
             </mat-chip-list>
             <br><mat-divider></mat-divider>
           </mat-card-content>
+          <mat-card-actions>
+            <button id="unrequest" mat-stroked-button [disabled]="item.isDisabled === 'false'" (click)="onUnrequest(item)">Unrequest</button>
+          </mat-card-actions>
         </mat-card>
       </ng-container>
     </div>

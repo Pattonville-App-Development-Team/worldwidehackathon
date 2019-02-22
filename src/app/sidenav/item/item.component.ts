@@ -36,8 +36,12 @@ export class ItemComponent implements OnInit {
     this.api.requestItem(item)
       .subscribe((res) => {
         console.log('success');
-        console.log(res['data']);
-        this.items = res['data'];
+        this.api.getAvailableItems()
+          .subscribe(availableItems => {
+            this.items = availableItems['data'];
+          }, err => {
+            console.log(err);
+          });
       }, (err) => {
         console.log('failure');
         console.log(err);

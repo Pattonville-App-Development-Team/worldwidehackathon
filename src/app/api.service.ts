@@ -54,6 +54,10 @@ export class ApiService {
     return this.http.put(this.baseUrl + 'request/' + item.barcode, this.httpOptions);
   }
 
+  unrequestItem(item: Item): Observable<any> {
+    return this.http.put(this.baseUrl + 'unrequest/' + item.barcode, this.httpOptions);
+  }
+
   updateUser(item: Item): Observable<any> {
     return this.http.put(this.baseUrl + item.barcode, item, this.httpOptions);
   }

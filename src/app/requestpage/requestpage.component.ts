@@ -24,4 +24,21 @@ export class RequestpageComponent implements OnInit {
       });
   }
 
+  onUnrequest(item: Item) {
+    item.isDisabled = 'false';
+    this.api.unrequestItem(item)
+      .subscribe((res) => {
+        console.log('success');
+        this.api.getRequestedItems()
+          .subscribe(requestedItems => {
+            this.items = requestedItems['data'];
+          }, err => {
+            console.log(err);
+          });
+      }, (err) => {
+        console.log('failure');
+        console.log(err);
+      });
+  }
+
 }
