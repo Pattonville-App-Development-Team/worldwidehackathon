@@ -1,5 +1,5 @@
 <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="2%" fxLayoutAlign="flex-start">
-  <ng-container *ngFor="let item of items | sidenavfilter" class="tile">
+  <ng-container *ngFor="let item of items" class="tile">
       <mat-card class="item" fxFlex="0 1 calc(33.3% - 32px)">
         <mat-card-header>
           <mat-card-title>{{item.title}}</mat-card-title>
