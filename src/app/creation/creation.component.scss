@@ -12,6 +12,16 @@
   margin-top: 30px;
   grid-area: main-stepper;
 }
+
+.shopping-cart {
+  padding: 0 0px;
+  margin-right: 20px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
 mat-horizontal-stepper {
   margin-top: 40px;
 }
@@ -55,7 +65,7 @@ mat-horizontal-stepper {
   margin: 0;
 }
 
-.webcam-container {
+.webcam-and-image-container {
   display: flex;
   width: 100%;
 }
@@ -87,4 +97,8 @@ mat-horizontal-stepper {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.webcam-and-image {
+  width: 45%;
 }

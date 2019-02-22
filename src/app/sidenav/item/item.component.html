@@ -1,10 +1,13 @@
 <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="2%" fxLayoutAlign="flex-start">
   <ng-container *ngFor="let item of items" class="tile">
-      <mat-card class="item" fxFlex="0 1 calc(33.3% - 32px)">
+      <mat-card class="item"
+                fxFlex="0 1 calc(33.3% - 32px)"
+                fxFlex.lt-md="0 1 calc(50% - 32px)"
+                fxFlex.lt-sm="100%">
         <mat-card-header>
           <mat-card-title>{{item.title}}</mat-card-title>
         </mat-card-header>
-        <img mat-card-image src="{{item.imageData}}" alt="Error: Could Not Recieve Photo">
+        <img mat-card-image src="{{item.imageData}}" alt="Error: Could Not Retrieve Photo">
         <mat-card-content class="item-content">
               <mat-chip-list class="attribute">
                 Size: <mat-chip>{{item.size}}</mat-chip>
@@ -13,7 +16,7 @@
                 Age: <mat-chip [disableRipple]="true">{{item.age}}</mat-chip>
               </mat-chip-list>
               <mat-chip-list class="attribute">
-                Catagory: <mat-chip>{{item.category}}</mat-chip>
+                Category: <mat-chip>{{item.category}}</mat-chip>
               </mat-chip-list>
               <br><mat-divider></mat-divider>
         </mat-card-content>

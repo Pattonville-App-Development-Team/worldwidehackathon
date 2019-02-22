@@ -1,5 +1,9 @@
-<mat-toolbar color="primary" class="example-toolbar">
-  <h1 class="example-app-name">Pirate Pete's Closet</h1>
+<mat-toolbar color="primary" class="project-toolbar">
+  <button mat-icon-button routerLink="/"><mat-icon>home</mat-icon></button>
+  <h1 class="project-app-name">Pirate Pete's Closet</h1>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="shopping-cart" routerLink="/creation"><mat-icon>edit</mat-icon></button>
+  <button mat-icon-button class="shopping-cart" routerLink="/request"><mat-icon>shopping_cart</mat-icon></button>
 </mat-toolbar>
 
 <div class="main">
@@ -8,7 +12,6 @@
     <p class="subtitle">This information will help others find what they need.</p>
 
     <mat-horizontal-stepper [linear]="false" #stepper>
-
       <mat-step [stepControl]="firstFormGroup">
         <form [formGroup]="firstFormGroup">
           <ng-template matStepLabel>About the item</ng-template>
@@ -21,20 +24,20 @@
             <mat-form-field appearance="outline" >
               <mat-label>Age</mat-label>
               <mat-select formControlName="age">
-                <mat-option value="prek">Pre-K</mat-option>
-                <mat-option value="elementary">Elementary Age</mat-option>
-                <mat-option value="middle">Middle School Age</mat-option>
-                <mat-option value="high">High School Age</mat-option>
-                <mat-option value="adult">Adult</mat-option>
+                <mat-option value="Pre-K">Pre-K</mat-option>
+                <mat-option value="Elementary">Elementary Age</mat-option>
+                <mat-option value="Middle School">Middle School Age</mat-option>
+                <mat-option value="High School">High School Age</mat-option>
+                <mat-option value="Adult">Adult</mat-option>
               </mat-select>
             </mat-form-field>
             <mat-form-field appearance="outline">
               <mat-label>Sizing</mat-label>
               <mat-select formControlName="size">
-                <mat-option value="onesize">One Size Fits All</mat-option>
-                <mat-option value="small">Small</mat-option>
-                <mat-option value="medium">Medium</mat-option>
-                <mat-option value="large">Large</mat-option>
+                <mat-option value="One Size Fits All">One Size Fits All</mat-option>
+                <mat-option value="Small">Small</mat-option>
+                <mat-option value="Medium">Medium</mat-option>
+                <mat-option value="Large">Large</mat-option>
               </mat-select>
             </mat-form-field>
             <mat-form-field appearance="outline">
@@ -54,10 +57,12 @@
       <mat-step [stepControl]="secondFormGroup">
         <form [formGroup]="secondFormGroup">
           <ng-template matStepLabel>Image of Item</ng-template>
-          <div class="webcam-container">
-            <webcam [width]="500" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"></webcam>
+          <div class="webcam-and-image-container">
+            <div class="webcam-and-image" #webcamContainer>
+              <webcam [width]="webcamContainer.clientWidth" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"></webcam>
+            </div>
             <span class="fill-span"></span>
-            <img [width]="500" [src]="webcamImage.imageAsDataUrl" *ngIf="webcamImage"/>
+            <img class="webcam-and-image" [src]="webcamImage.imageAsDataUrl" *ngIf="webcamImage"/>
           </div>
           <br/>
           <div class="horizontal-alignment-container">
@@ -97,13 +102,12 @@
         <div class="stepper-movement-container">
           <button mat-button (click)="stepper.reset()">Reset</button>
           <button mat-button (click)="stepper.previous()">Back</button>
-          <button mat-button (click)="sendData()">Done</button>
+          <button mat-button (click)="sendData()" routerLink="/main">Done</button>
         </div>
         <div>
           <mat-label id='err'></mat-label>
         </div>
       </mat-step>
-
     </mat-horizontal-stepper>
   </div>
 </div>

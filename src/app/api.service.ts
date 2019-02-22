@@ -10,7 +10,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  baseUrl = 'http://52.14.200.201:3000/api/items/';
+  baseUrl = 'https://ec2-52-14-200-201.us-east-2.compute.amazonaws.com/api/items/';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -23,6 +23,10 @@ export class ApiService {
   }
 
   getAvailableItems(): Observable<any> {
+    return this.http.get(this.baseUrl + 'available/false');
+  }
+
+  getRequestedItems(): Observable<any> {
     return this.http.get(this.baseUrl + 'available/true');
   }
 
@@ -48,6 +52,10 @@ export class ApiService {
 
   requestItem(item: Item): Observable<any> {
     return this.http.put(this.baseUrl + 'request/' + item.barcode, this.httpOptions);
+  }
+
+  unrequestItem(item: Item): Observable<any> {
+    return this.http.put(this.baseUrl + 'unrequest/' + item.barcode, this.httpOptions);
   }
 
   updateUser(item: Item): Observable<any> {
