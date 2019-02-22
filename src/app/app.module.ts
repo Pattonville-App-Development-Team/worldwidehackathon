@@ -27,7 +27,6 @@ import { ItemComponent } from './sidenav/item/item.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RequestpageComponent } from './requestpage/requestpage.component';
-import { RequestDialogComponent } from './request-dialog/request-dialog.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +36,6 @@ import { RequestDialogComponent } from './request-dialog/request-dialog.componen
     SidenavFilterPipe,
     ItemComponent,
     RequestpageComponent,
-    RequestDialogComponent,
   ],
   imports: [
     WebcamModule,
