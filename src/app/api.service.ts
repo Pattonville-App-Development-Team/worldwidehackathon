@@ -10,7 +10,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  baseUrl = 'http://52.14.200.201:3000/api/items/';
+  baseUrl = 'https://52.14.200.201/api/items/';
 
   httpOptions = {
     headers: new HttpHeaders({

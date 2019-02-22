@@ -97,7 +97,7 @@
         <div class="stepper-movement-container">
           <button mat-button (click)="stepper.reset()">Reset</button>
           <button mat-button (click)="stepper.previous()">Back</button>
-          <button mat-button (click)="sendData()">Done</button>
+          <button mat-button (click)="sendData()" routerLink="/main">Done</button>
         </div>
         <div>
           <mat-label id='err'></mat-label>
