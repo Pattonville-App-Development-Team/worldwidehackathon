@@ -10,9 +10,6 @@
   grid-column-start: main;
   grid-row-start: main;
 }
-button{
-  align: center;
-}
 h1.project-app-name {
   margin-left: 8px;
 }
@@ -31,4 +28,9 @@ h1.project-app-name {
 
 .item {
   margin-bottom: 3%;
+}
+
+.request-button {
+  display: flex;
+  justify-content: center;
 }

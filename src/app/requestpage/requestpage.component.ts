@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiService} from '../api.service';
 import {Item} from '../item';
+import {RequestdialogComponent} from '../requestdialog/requestdialog.component';
+import {MatDialog} from '@angular/material';
 
 @Component({
   selector: 'app-requestpage',
@@ -11,7 +13,16 @@ export class RequestpageComponent implements OnInit {
 
   items: Item[];
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, public  dialog: MatDialog) { }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(RequestdialogComponent, {
+      width: '400px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+    });
+  }
 
   ngOnInit() {
     this.api.getRequestedItems()

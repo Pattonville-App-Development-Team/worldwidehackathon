@@ -4,7 +4,7 @@
     <h1 class="project-app-name">Pirate Pete's Closet</h1>
     <span class="example-spacer"></span>
     <button mat-icon-button class="shopping-cart" routerLink="/creation"><mat-icon>edit</mat-icon></button>
-    <button mat-icon-button class="shopping-cart" routerLink="/request"><mat-icon matBadge={{badgeRequests}} matBadgeColor="warn">shopping_cart</mat-icon></button>
+    <button mat-icon-button class="shopping-cart" routerLink="/request"><mat-icon>shopping_cart</mat-icon></button>
   </mat-toolbar>
     <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="2%" fxLayoutAlign="flex-start">
       <ng-container *ngFor="let item of items" class="tile">
@@ -31,4 +31,7 @@
         </mat-card>
       </ng-container>
     </div>
+  <div class="request-button">
+    <button mat-raised-button color="primary" (click)="openDialog()">Request</button>
+  </div>
 </div>
