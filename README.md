@@ -17,4 +17,4 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Developers
-This project was made by [Yasaman Mostafavi](https://github.com/YasiTL), [Eli Card](https://github.com/SpectralArtist), [Sam Vaclavik] (https://github.com/Dom-1), [Jacob Wilfong](https://github.com/Starforce774), [William Skaggs](https://github.com/ft-l) and [Kyle Wright](https://github.com/kwright02). 
+This project was proudly developed by [Yasaman Mostafavi](https://github.com/YasiTL), [Eli Card](https://github.com/SpectralArtist), [Sam Vaclavik](https://github.com/Dom-1), [Jacob Wilfong](https://github.com/Starforce774), [William Skaggs](https://github.com/ft-l) and [Kyle Wright](https://github.com/kwright02). 
