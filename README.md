@@ -6,7 +6,7 @@ Pirate Pete's Closet is a free closet supplied with clothes, toiletries, and oth
 
 We are unbelivably proud to say that this hackathon project earned the Pattonville Computer Science department $10,000 to help fund even bigger endevors for Capstone and computer science education at Pattonville.
 
-[World Wide Technology Recognizes Future Tech Leaders at Annual STEM Student Forum] (https://www.wwt.com/all-blog/wwt-stem-student-forum/)
+[World Wide Technology Recognizes Future Tech Leaders at Annual STEM Student Forum](https://www.wwt.com/all-blog/wwt-stem-student-forum/)
 
 ## Development server
 
